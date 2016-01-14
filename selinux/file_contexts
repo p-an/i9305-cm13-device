@@ -10,6 +10,7 @@
 /dev/hsicctl[0-3]*                      u:object_r:radio_device:s0
 /dev/ttyUSB0                            u:object_r:radio_device:s0
 /dev/qcom_diag                          u:object_r:diagnostic_device:s0
+/dev/ttySAC2                            u:object_r:radio_device:s0
 
 # GPS
 /dev/ttySAC1                            u:object_r:gps_device:s0
@@ -50,6 +51,7 @@
 
 # Wifi
 /efs/wifi/.mac.info                     u:object_r:wifi_data_file:s0
+/data/.cid.info                         u:object_r:wifi_data_file:s0
 
 # Sec-ril
 /efs/FactoryApp/keystr                  u:object_r:efs_file:s0
@@ -81,3 +83,6 @@
 
 # Audio related
 /data/local/audio(/.*)?                 u:object_r:volume_data_file:s0
+
+
+/system/bin/macloader			u:object_r:macloader_exec:s0

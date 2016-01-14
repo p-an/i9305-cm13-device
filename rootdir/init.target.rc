@@ -8,6 +8,15 @@ on init
     mkdir /dev/pipes 0771 shell shell
 
 on post-fs-data
+    #cm12chroot
+    mount sysfs sysfs /system/cm12chroot/sys
+    mount proc proc /system/cm12chroot/proc
+    mount none /dev /system/cm12chroot/dev bind
+    mount none /efs /system/cm12chroot/efs bind
+    mount none /firmware /system/cm12chroot/firmware bind
+    mount none /tombstones /system/cm12chroot/tombstones bind
+    mount none /data /system/cm12chroot/data bind
+
     # MDM requirement
     mkdir /data/cp_log
     chmod 0775 /data/cp_log
@@ -100,6 +109,11 @@ on post-fs-data
     mkdir /data/misc/location/xtwifi 0770 gps gps
 
     chmod 0755 /proc/cmdline
+
+    write /data/ISP_CV 0
+    restorecon /data/ISP_CV
+    write /data/.cid.info ""
+    restorecon /data/.cid.info
 
 on boot
 

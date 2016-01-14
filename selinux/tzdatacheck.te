@@ -1,1 +1,2 @@
 allow tzdatacheck log_device:chr_file { write open };
+allow tzdatacheck log_device:dir { search };

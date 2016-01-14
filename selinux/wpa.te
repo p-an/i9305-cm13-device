@@ -7,3 +7,6 @@ allow wpa proc_net:file write;
 allow wpa wifi_data_file:sock_file { write };
 allow wpa log_device:chr_file { open write };
 
+allow wpa log_device:chr_file { open write };
+allow wpa log_device:dir { search };
+

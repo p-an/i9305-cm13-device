@@ -12,4 +12,5 @@ allow mediaserver mnt_user_file:dir { search };
 allow mediaserver storage_file:lnk_file { read };
 allow mediaserver storage_file:dir { search };
 allow mediaserver log_device:chr_file { open write };
-
+allow mediaserver log_device:dir { search };
+allow mediaserver system_file:file { execmod };

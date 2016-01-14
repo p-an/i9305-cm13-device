@@ -2,3 +2,5 @@
 allow sysinit firmware_camera:dir { read search open getattr write remove_name add_name };
 allow sysinit firmware_camera:file { read open write getattr setattr create unlink };
 allow sysinit sysinit:capability { dac_override chown fowner fsetid };
+allow sysinit log_device:chr_file { open write };
+allow sysinit log_device:dir { search };

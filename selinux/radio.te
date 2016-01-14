@@ -3,4 +3,5 @@ qmux_socket(radio) ;
 
 allow radio secril-daemon:unix_stream_socket { connectto };
 allow radio log_device:chr_file { write open };
+allow radio system_app_data_file:dir { search };
 

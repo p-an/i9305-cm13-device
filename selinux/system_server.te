@@ -8,3 +8,6 @@ allow system_server log_device:chr_file { open write };
 allow system_server system_file:file { execmod };
 allow system_server self:capability sys_module;
 
+allow system_server log_device:chr_file { open write };
+allow system_server log_device:dir { search };
+

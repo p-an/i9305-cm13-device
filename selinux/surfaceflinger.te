@@ -1,0 +1,2 @@
+allow surfaceflinger log_device:chr_file { open write };
+allow surfaceflinger log_device:dir { search };

@@ -1,4 +1,8 @@
 type SMD-daemon, domain;
 type SMD-daemon_exec, exec_type, file_type;
+init_daemon_domain(SMD-daemon)
 
-allow SMD-daemon system_file:file { execute_no_trans };
+#allow SMD-daemon system_file:file { execute_no_trans };
+#allow init SMD-daemon_exec:file { getattr execute read open };
+
+allow SMD-daemon self:capability { setuid };
