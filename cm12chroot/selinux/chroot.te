@@ -1,3 +1,5 @@
 
 type cm12chroot_file, file_type;
 allow init cm12chroot_file:dir mounton;
+
+allow init self:capability sys_chroot;
