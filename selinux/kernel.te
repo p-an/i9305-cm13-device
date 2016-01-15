@@ -1,0 +1,3 @@
+allow kernel efs_file:dir { search };
+allow kernel system_data_file:file { open write };
+

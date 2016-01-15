@@ -10,3 +10,4 @@ allow wpa log_device:chr_file { open write };
 allow wpa log_device:chr_file { open write };
 allow wpa log_device:dir { search };
 
+allow wpa sudaemon:unix_dgram_socket { sendto };
