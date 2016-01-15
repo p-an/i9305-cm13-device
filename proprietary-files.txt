@@ -37,7 +37,6 @@ system/lib/libsec-ril.so
 system/lib/libstlport.so
 system/vendor/lib/libconfigdb.so
 system/lib/libxml.so
-system/bin/mount_chroot.sh
 system/lib/libloc_adapter.so
 system/lib/libloc_eng.so
 system/lib/libgps.utils.so
