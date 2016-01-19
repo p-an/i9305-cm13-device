@@ -24,7 +24,9 @@ COMMON=smdk4412-common
 COMMONOUTDIR=vendor/$VENDOR/$COMMON
 COMMONBASE=../../../$COMMONOUTDIR/proprietary
 COMMONMAKEFILE=../../../$COMMONOUTDIR/common-vendor-blobs.mk
-COMMONPROPS=../smdk4412-common/proprietary-files.txt
+#COMMONPROPS=../smdk4412-common/proprietary-files.txt
+COMMONPROPS=../i9305/smdk4412-proprietary-files.txt
+
 
 mkdir -p ../../../vendor/$VENDOR/$COMMON/proprietary
 
