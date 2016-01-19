@@ -115,6 +115,9 @@ on post-fs-data
     write /data/.cid.info ""
     restorecon /data/.cid.info
 
+    chmod 0666 /dev/ttySAC0
+    chmod 0666 /sys/class/rfkill/rfkill0/state
+
 on boot
 
 # SISO-ANDR_PERF :: START Changing scheduler to cfq and reseting cpu min freq to -1 after boot complete
