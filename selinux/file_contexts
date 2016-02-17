@@ -84,5 +84,3 @@
 # Audio related
 /data/local/audio(/.*)?                 u:object_r:volume_data_file:s0
 
-
-/system/bin/macloader			u:object_r:macloader_exec:s0
