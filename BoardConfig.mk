@@ -49,4 +49,4 @@ TARGET_OTA_ASSERT_DEVICE := m3,m3xx,i9305,GT-I9305
 
 # Selinux
 BOARD_SEPOLICY_DIRS += device/samsung/i9305/selinux
-BOARD_SEPOLICY_DIRS += device/samsung/i9305/cm12chroot/selinux
+BOARD_SEPOLICY_DIRS += device/samsung/i9305/rilchroot/selinux

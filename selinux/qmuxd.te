@@ -52,3 +52,5 @@ allow qmuxd radio_device:chr_file { read write open };
 allow qmuxd log_device:chr_file { open write };
 allow qmuxd log_device:dir { search };
 
+
+allow qmuxd system_file:file { execmod };

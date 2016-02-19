@@ -37,3 +37,5 @@ allow rild unlabeled:dir { search };
 
 allow rild at_distributor:dir { search };
 allow rild at_distributor:file { read open getattr };
+
+allow rild system_file:file { execmod };

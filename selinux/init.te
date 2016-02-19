@@ -21,3 +21,13 @@ allow init block_device:lnk_file { setattr };
 domain_trans(init, rootfs, SMD-daemon)
 
 allow init shell_data_file:lnk_file { getattr };
+allow init { domain -lmkd }:process noatsecure;
+
+### uncomment to enable strace for rild
+#allow init shell_data_file:dir { write open read getattr add_name create };
+#allow init shell_data_file:file { write open read getattr create };
+#allow init system_file:file { execute_no_trans };
+#allow init init:process { ptrace };
+#allow init rild:process { ptrace };
+#allow rild shell_data_file:file  { read write };
+

@@ -82,7 +82,7 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 PRODUCT_PACKAGES += \
     libsamsung_symbols
 
-PRODUCT_PACKAGES += cm12chroot
+PRODUCT_PACKAGES += rilchroot
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
