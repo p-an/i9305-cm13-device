@@ -8,6 +8,9 @@ case $LINK in
 	cm12chroot)
 		ACT=1
 		;;
+	skkchroot)
+		ACT=2
+		;;
 	*)
 		ACT=x
 		echo "ERROR unknown RIL"
@@ -15,8 +18,11 @@ case $LINK in
 esac
 
 [ "$1" = "x" ] || echo "Select RIL implementation:"
+
 [ $ACT = 1 ] && echo -n '* ' || echo -n '  '
 echo "1 - CM 12.1 based"
+[ $ACT = 2 ] && echo -n '* ' || echo -n '  '
+echo "2 - Stock 4.4.4 based"
 
 if [ -z "$1" ]
 then
@@ -42,6 +48,9 @@ select_ril(){
 case $n in
         1)
                 select_ril cm12chroot
+                ;;
+        2)
+                select_ril skkchroot
                 ;;
         *)
                 ;;
