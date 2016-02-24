@@ -8,15 +8,6 @@ on init
     mkdir /dev/pipes 0771 shell shell
 
 on post-fs-data
-    #rilchroot
-    mount sysfs sysfs /system/rilchroot/sys
-    mount proc proc /system/rilchroot/proc
-    mount none /dev /system/rilchroot/dev bind
-    mount none /efs /system/rilchroot/efs bind
-    mount none /firmware /system/rilchroot/firmware bind
-    mount none /tombstones /system/rilchroot/tombstones bind
-    mount none /data /system/rilchroot/data bind
-
     # MDM requirement
     mkdir /data/cp_log
     chmod 0775 /data/cp_log
@@ -132,26 +123,22 @@ on property:sys.boot_completed=1
 
 # AT Distributor for factory test
 service at_distributor /system/bin/at_distributor
-    chroot /system/rilchroot
     class late_start
     user root
     group radio log
 
 # diag app for cp uart
 service diag_uart_log /system/bin/diag_uart_log
-    chroot /system/rilchroot
     class main
     user root
     group radio
 
 service SMD-daemon /system/bin/smdexe
-    chroot /system/rilchroot
     class main
     user root
     group system radio inet net_raw
 
 service qc_kickstart /system/bin/qcks s
-    chroot /system/rilchroot
     class core
     user root
     seclabel u:r:kickstart:s0
@@ -159,13 +146,11 @@ service qc_kickstart /system/bin/qcks s
 
 #For EncryptionMode - remove disabled, Modify class main
 service qmiproxy /system/bin/qmiproxy
-    chroot /system/rilchroot
     class main
     user radio
     group radio gps
 
 service qmuxd /system/bin/qmuxd
-    chroot /system/rilchroot
     class main
     user system
     group radio log audio bluetooth gps log

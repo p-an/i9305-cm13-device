@@ -1,5 +1,0 @@
-
-type rilchroot_file, file_type;
-allow init rilchroot_file:dir mounton;
-
-allow init self:capability sys_chroot;

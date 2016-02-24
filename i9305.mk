@@ -96,7 +96,8 @@ PRODUCT_COPY_FILES += \
 
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
+    net.tethering.noprovisioning=true \
+    ro.telephony.ril_class=i9305RIL
 
 # Include common makefile
 $(call inherit-product, device/samsung/smdk4412-common/common.mk)
