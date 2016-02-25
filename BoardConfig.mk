@@ -50,3 +50,6 @@ TARGET_OTA_ASSERT_DEVICE := m3,m3xx,i9305,GT-I9305
 # Selinux
 BOARD_SEPOLICY_DIRS += device/samsung/i9305/selinux
 BOARD_SEPOLICY_DIRS += device/samsung/i9305/rilchroot/selinux
+
+#this is a hack, it relies on this file being processed after the one from smdk4412-qcom-common
+BOARD_RIL_CLASS += ../../../device/samsung/i9305/ril/

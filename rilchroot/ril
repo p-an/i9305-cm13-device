@@ -11,6 +11,9 @@ case $LINK in
 	skkchroot)
 		ACT=2
 		;;
+	tmchroot)
+		ACT=3
+		;;
 	*)
 		ACT=x
 		echo "ERROR unknown RIL"
@@ -23,6 +26,8 @@ esac
 echo "1 - CM 12.1 based"
 [ $ACT = 2 ] && echo -n '* ' || echo -n '  '
 echo "2 - Stock 4.4.4 based"
+[ $ACT = 3 ] && echo -n '* ' || echo -n '  '
+echo "3 - TheMuppets based"
 
 if [ -z "$1" ]
 then
@@ -51,6 +56,9 @@ case $n in
                 ;;
         2)
                 select_ril skkchroot
+                ;;
+        2)
+                select_ril tmchroot
                 ;;
         *)
                 ;;
