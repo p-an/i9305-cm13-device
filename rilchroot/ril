@@ -57,7 +57,7 @@ case $n in
         2)
                 select_ril skkchroot
                 ;;
-        2)
+        3)
                 select_ril tmchroot
                 ;;
         *)

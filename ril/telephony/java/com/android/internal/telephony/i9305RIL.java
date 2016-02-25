@@ -13,11 +13,13 @@ import java.io.File;
 public class i9305RIL extends smdk4x12QComRIL{
     public i9305RIL(Context context, int networkModes, int cdmaSubscription) {
 	super(context,networkModes,cdmaSubscription);
+	getChroot();
     }
 
     public i9305RIL(Context context, int preferredNetworkType,
             int cdmaSubscription, Integer instanceId) {
         super(context, preferredNetworkType, cdmaSubscription, instanceId);
+	getChroot();
     }
 
     private static int CM12_CHROOT = 1;
