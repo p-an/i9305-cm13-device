@@ -35,7 +35,7 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := cyanogenmod_i9305_defconfig
+TARGET_KERNEL_CONFIG := ../../../../../../device/samsung/i9305/kernelconfig/cyanogenmod_i9305_defconfig
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/i9305/rootdir/fstab.smdk4x12
@@ -53,3 +53,26 @@ BOARD_SEPOLICY_DIRS += device/samsung/i9305/rilchroot/selinux
 
 #this is a hack, it relies on this file being processed after the one from smdk4412-qcom-common
 BOARD_RIL_CLASS += ../../../device/samsung/i9305/ril/
+
+# TWRP
+TWRP_NEW_THEME := true
+TW_THEME := portrait_hdpi
+TW_INCLUDE_CRYPTO := true
+
+TARGET_USERIMAGES_USE_F2FS := true
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+HAVE_SELINUX := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_MAX_BRIGHTNESS := 255
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/i9305/custombootimg.mk
+
+BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH:=false
+
+
+RECOVERY_VARIANT := twrp
+
+
