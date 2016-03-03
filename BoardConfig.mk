@@ -35,7 +35,7 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := ../../../../../../device/samsung/i9305/kernelconfig/cyanogenmod_i9305_defconfig
+TARGET_KERNEL_CONFIG := ../../../../../../device/samsung/i9305/kernelconfig/cyanogenmod-f2fs_i9305_defconfig
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/i9305/rootdir/fstab.smdk4x12
@@ -55,6 +55,9 @@ BOARD_SEPOLICY_DIRS += device/samsung/i9305/rilchroot/selinux
 BOARD_RIL_CLASS += ../../../device/samsung/i9305/ril/
 
 # TWRP
+ifeq ($(USE_TWRP), YES)
+RECOVERY_VARIANT := twrp
+
 TWRP_NEW_THEME := true
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
@@ -69,10 +72,7 @@ TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/i9305/custombootimg.mk
-
 BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH:=false
-
-
-RECOVERY_VARIANT := twrp
-
+TARGET_KERNEL_CONFIG := ../../../../../../device/samsung/i9305/kernelconfig/cyanogenmod-twrp_i9305_defconfig
+endif
 

@@ -17,9 +17,12 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES)
 	@echo -e ${CL_CYN}"----- Recompressing recovery ramdisk with lzma ------"${CL_RST}
-	cat $(BUILT_RAMDISK_TARGET) | gzip -d | $(LZMA_BIN) > $(BUILT_RAMDISK_TARGET).tmp
-	mv -f $(BUILT_RAMDISK_TARGET).tmp $(BUILT_RAMDISK_TARGET)
+	cat $(BUILT_RAMDISK_TARGET) | gzip -d | $(LZMA_BIN) > $(BUILT_RAMDISK_TARGET).lzma
+	mv -f $(BUILT_RAMDISK_TARGET) $(BUILT_RAMDISK_TARGET).gz
+	mv -f $(BUILT_RAMDISK_TARGET).lzma $(BUILT_RAMDISK_TARGET)
 	$(call pretty,"Target boot image: $@")
-	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
+	$(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
+	mv -f $(BUILT_RAMDISK_TARGET) $(BUILT_RAMDISK_TARGET).lzma
+	mv -f $(BUILT_RAMDISK_TARGET).gz $(BUILT_RAMDISK_TARGET)
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE),raw)
 	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
