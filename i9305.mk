@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc
 
 ifeq ($(USE_TWRP), YES)
-    PRODUCT_COPY_FILES += $(LOCAL_PATH)/rootdir/twrp.fstab:root/etc/twrp.fstab
+    TARGET_RECOVERY_DEVICE_DIRS += device/samsung/i9305/twrp
 endif
 
 # Audio
