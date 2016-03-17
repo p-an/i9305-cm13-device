@@ -4,3 +4,6 @@ allow sysinit firmware_camera:file { read open write getattr setattr create unli
 allow sysinit sysinit:capability { dac_override chown fowner fsetid };
 allow sysinit log_device:chr_file { open write };
 allow sysinit log_device:dir { search };
+
+#agni
+allow sysinit rootfs:file { execute };
