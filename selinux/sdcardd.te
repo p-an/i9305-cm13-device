@@ -1,2 +1,4 @@
 allow sdcardd log_device:chr_file { open write };
+allow sdcardd log_device:dir { search };
+
 
