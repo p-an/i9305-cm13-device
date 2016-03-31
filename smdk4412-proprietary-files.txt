@@ -31,7 +31,6 @@ system/lib/libMcClient.so
 system/lib/libMcRegistry.so
 system/lib/libMcVersion.so
 system/lib/libsecnativefeature.so
-system/lib/libUMP.so
 system/usr/idc/melfas_ts.idc
 system/usr/idc/sec_touchscreen.idc
 system/usr/keylayout/gpio-keys.kl
